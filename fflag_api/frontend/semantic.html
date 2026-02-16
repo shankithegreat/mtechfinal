@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Operations - Feature Flag Manager</title>
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="outfit.css">
+</head>
+
+<body>
+    <div class="min-h-screen p-8">
+        <!-- Header -->
+        <div class="max-w-7xl mx-auto mb-8">
+            <div class="glass-panel p-6 rounded-2xl">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold text-white tracking-tight">Semantic Operations</h1>
+                        <p class="text-gray-400 mt-1">AI-powered code and feature flag analysis</p>
+                    </div>
+                    <a href="/" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto">
+            <div class="glass-panel rounded-2xl overflow-hidden">
+                <!-- Tab Navigation -->
+                <div class="flex border-b border-slate-700/50 bg-slate-800/30 overflow-x-auto scrollbar-hide">
+                    <button class="tab-btn active px-6 py-4 text-sm font-medium text-white border-b-2 border-blue-500 whitespace-nowrap transition-all hover:bg-slate-700/30" data-tab="rebuild">
+                        Rebuild Index
+                    </button>
+                    <button class="tab-btn px-6 py-4 text-sm font-medium text-gray-400 border-b-2 border-transparent whitespace-nowrap transition-all hover:bg-slate-700/30 hover:text-white" data-tab="incremental">
+                        Incremental Index
+                    </button>
+                    <button class="tab-btn px-6 py-4 text-sm font-medium text-gray-400 border-b-2 border-transparent whitespace-nowrap transition-all hover:bg-slate-700/30 hover:text-white" data-tab="status">
+                        Index Status
+                    </button>
+                    <button class="tab-btn px-6 py-4 text-sm font-medium text-gray-400 border-b-2 border-transparent whitespace-nowrap transition-all hover:bg-slate-700/30 hover:text-white" data-tab="search">
+                        Semantic Search
+                    </button>
+                    <button class="tab-btn px-6 py-4 text-sm font-medium text-gray-400 border-b-2 border-transparent whitespace-nowrap transition-all hover:bg-slate-700/30 hover:text-white" data-tab="similar">
+                        Find Similar
+                    </button>
+                    <button class="tab-btn px-6 py-4 text-sm font-medium text-gray-400 border-b-2 border-transparent whitespace-nowrap transition-all hover:bg-slate-700/30 hover:text-white" data-tab="related-flags">
+                        Related Flags
+                    </button>
+                    <button class="tab-btn px-6 py-4 text-sm font-medium text-gray-400 border-b-2 border-transparent whitespace-nowrap transition-all hover:bg-slate-700/30 hover:text-white" data-tab="related-code">
+                        Related Code
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="p-8">
+                    <!-- Rebuild Tab -->
+                    <div id="tab-rebuild" class="tab-content">
+                        <h2 class="text-xl font-semibold text-white mb-4">Rebuild Semantic Index</h2>
+                        <p class="text-gray-400 mb-6">Clear and rebuild the entire semantic index from scratch. This process will re-index all code and feature flags in the repository.</p>
+                        
+                        <button id="rebuildBtn" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium rounded-xl px-6 py-3 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/30">
+                            Rebuild Index
+                        </button>
+                        
+                        <div id="rebuildResult" class="mt-6 hidden"></div>
+                    </div>
+
+                    <!-- Incremental Index Tab -->
+                    <div id="tab-incremental" class="tab-content hidden">
+                        <h2 class="text-xl font-semibold text-white mb-4">Incremental Indexing</h2>
+                        <p class="text-gray-400 mb-6">Index new or changed files without rebuilding the entire index.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Services (Optional)</label>
+                                <textarea id="servicesInput" rows="3" placeholder='["service1", "service2"] or leave empty for all' class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4 font-mono"></textarea>
+                                <p class="text-xs text-gray-500 mt-1">Enter JSON array of service names or leave empty to index all services</p>
+                            </div>
+                            
+                            <button id="incrementalBtn" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-medium rounded-xl px-6 py-3 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-green-500/30">
+                                Start Incremental Index
+                            </button>
+                        </div>
+                        
+                        <div id="incrementalResult" class="mt-6 hidden"></div>
+                    </div>
+
+                    <!-- Status Tab -->
+                    <div id="tab-status" class="tab-content hidden">
+                        <h2 class="text-xl font-semibold text-white mb-4">Index Status</h2>
+                        <p class="text-gray-400 mb-6">View current indexing status and statistics.</p>
+                        
+                        <button id="statusBtn" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-xl px-6 py-3 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-purple-500/30">
+                            Get Index Status
+                        </button>
+                        
+                        <div id="statusResult" class="mt-6 hidden"></div>
+                    </div>
+
+                    <!-- Search Tab -->
+                    <div id="tab-search" class="tab-content hidden">
+                        <h2 class="text-xl font-semibold text-white mb-4">Semantic Search</h2>
+                        <p class="text-gray-400 mb-6">Search across code and feature flags using natural language queries.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Search Query</label>
+                                <textarea id="searchQuery" rows="3" placeholder="Enter your search query..." class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4"></textarea>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Search Type</label>
+                                    <select id="searchType" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4 cursor-pointer">
+                                        <option value="all">All</option>
+                                        <option value="code">Code Only</option>
+                                        <option value="flag">Flags Only</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Limit</label>
+                                    <input type="number" id="searchLimit" value="10" min="1" max="50" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                                </div>
+                                
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Threshold</label>
+                                    <input type="number" id="searchThreshold" value="0.7" min="0" max="1" step="0.1" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                                </div>
+                            </div>
+                            
+                            <button id="searchBtn" class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-medium rounded-xl px-6 py-3 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/30">
+                                Search
+                            </button>
+                        </div>
+                        
+                        <div id="searchResult" class="mt-6 hidden"></div>
+                    </div>
+
+                    <!-- Similar Tab -->
+                    <div id="tab-similar" class="tab-content hidden">
+                        <h2 class="text-xl font-semibold text-white mb-4">Find Similar Items</h2>
+                        <p class="text-gray-400 mb-6">Find items similar to a given code snippet or feature flag.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Item Type</label>
+                                <select id="similarType" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4 cursor-pointer">
+                                    <option value="code">Code</option>
+                                    <option value="flag">Flag</option>
+                                </select>
+                            </div>
+                            
+                            <div id="similarCodeInput">
+                                <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Item ID</label>
+                                <input type="number" id="similarItemId" placeholder="Enter vector ID" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                            </div>
+                            
+                            <div id="similarFlagInput" class="hidden">
+                                <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Flag Name</label>
+                                <input type="text" id="similarFlagName" placeholder="Enter flag name" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Limit</label>
+                                    <input type="number" id="similarLimit" value="5" min="1" max="20" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                                </div>
+                                
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Threshold</label>
+                                    <input type="number" id="similarThreshold" value="0.7" min="0" max="1" step="0.1" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                                </div>
+                            </div>
+                            
+                            <button id="similarBtn" class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-medium rounded-xl px-6 py-3 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/30">
+                                Find Similar
+                            </button>
+                        </div>
+                        
+                        <div id="similarResult" class="mt-6 hidden"></div>
+                    </div>
+
+                    <!-- Related Flags Tab -->
+                    <div id="tab-related-flags" class="tab-content hidden">
+                        <h2 class="text-xl font-semibold text-white mb-4">Find Related Flags</h2>
+                        <p class="text-gray-400 mb-6">Find feature flags related to a code snippet.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Code Snippet</label>
+                                <textarea id="relatedFlagsCode" rows="8" placeholder="Paste your code snippet here..." class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4 font-mono"></textarea>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Limit</label>
+                                    <input type="number" id="relatedFlagsLimit" value="10" min="1" max="50" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                                </div>
+                                
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Threshold</label>
+                                    <input type="number" id="relatedFlagsThreshold" value="0.7" min="0" max="1" step="0.1" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                                </div>
+                            </div>
+                            
+                            <button id="relatedFlagsBtn" class="bg-gradient-to-r from-teal-600 to-green-600 hover:from-teal-700 hover:to-green-700 text-white font-medium rounded-xl px-6 py-3 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-teal-500/30">
+                                Find Related Flags
+                            </button>
+                        </div>
+                        
+                        <div id="relatedFlagsResult" class="mt-6 hidden"></div>
+                    </div>
+
+                    <!-- Related Code Tab -->
+                    <div id="tab-related-code" class="tab-content hidden">
+                        <h2 class="text-xl font-semibold text-white mb-4">Find Related Code</h2>
+                        <p class="text-gray-400 mb-6">Find code that uses or relates to a specific feature flag.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Flag Name</label>
+                                <input type="text" id="relatedCodeFlag" placeholder="Enter flag name" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Limit</label>
+                                    <input type="number" id="relatedCodeLimit" value="10" min="1" max="50" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                                </div>
+                                
+                                <div>
+                                    <label class="text-gray-400 text-sm font-medium ml-1 mb-2 block">Threshold</label>
+                                    <input type="number" id="relatedCodeThreshold" value="0.6" min="0" max="1" step="0.1" class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-4">
+                                </div>
+                            </div>
+                            
+                            <button id="relatedCodeBtn" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium rounded-xl px-6 py-3 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-indigo-500/30">
+                                Find Related Code
+                            </button>
+                        </div>
+                        
+                        <div id="relatedCodeResult" class="mt-6 hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative blobs -->
+        <div class="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div class="absolute top-20 right-20 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-40 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://127.0.0.1:1212';
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+                
+                // Update buttons
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('active', 'text-white', 'border-blue-500');
+                    b.classList.add('text-gray-400', 'border-transparent');
+                });
+                btn.classList.add('active', 'text-white', 'border-blue-500');
+                btn.classList.remove('text-gray-400', 'border-transparent');
+                
+                // Update content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            });
+        });
+
+        // Similar type toggle
+        document.getElementById('similarType').addEventListener('change', (e) => {
+            if (e.target.value === 'code') {
+                document.getElementById('similarCodeInput').classList.remove('hidden');
+                document.getElementById('similarFlagInput').classList.add('hidden');
+            } else {
+                document.getElementById('similarCodeInput').classList.add('hidden');
+                document.getElementById('similarFlagInput').classList.remove('hidden');
+            }
+        });
+
+        // Utility functions
+        function showLoading(btn, originalText) {
+            btn.disabled = true;
+            btn.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> ${originalText}...`;
+        }
+
+        function hideLoading(btn, originalText) {
+            btn.disabled = false;
+            btn.textContent = originalText;
+        }
+
+        function showError(resultDiv, message) {
+            resultDiv.innerHTML = `<div class="bg-red-500/10 border border-red-500/50 rounded-xl p-4"><p class="text-red-400">${message}</p></div>`;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function showSuccess(resultDiv, data) {
+            resultDiv.innerHTML = data;
+            resultDiv.classList.remove('hidden');
+        }
+
+        // Rebuild Index
+        document.getElementById('rebuildBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('rebuildBtn');
+            const resultDiv = document.getElementById('rebuildResult');
+            
+            showLoading(btn, 'Rebuilding');
+            
+            try {
+                const response = await fetch(`${API_BASE}/semantic/index/rebuild`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    const stats = data.statistics;
+                    showSuccess(resultDiv, `
+                        <div class="bg-green-500/10 border border-green-500/50 rounded-xl p-6">
+                            <h3 class="text-green-400 font-semibold mb-4">✓ Index Rebuilt Successfully</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                                <div class="bg-slate-800/50 p-3 rounded-lg">
+                                    <p class="text-gray-400 text-xs mb-1">Code Items</p>
+                                    <p class="text-white font-semibold text-lg">${stats.code_items || 0}</p>
+                                </div>
+                                <div class="bg-slate-800/50 p-3 rounded-lg">
+                                    <p class="text-gray-400 text-xs mb-1">Flag Items</p>
+                                    <p class="text-white font-semibold text-lg">${stats.flag_items || 0}</p>
+                                </div>
+                                <div class="bg-slate-800/50 p-3 rounded-lg">
+                                    <p class="text-gray-400 text-xs mb-1">Services</p>
+                                    <p class="text-white font-semibold text-lg">${stats.services_indexed || 0}</p>
+                                </div>
+                                <div class="bg-slate-800/50 p-3 rounded-lg">
+                                    <p class="text-gray-400 text-xs mb-1">Files</p>
+                                    <p class="text-white font-semibold text-lg">${stats.files_indexed || 0}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                } else {
+                    showError(resultDiv, data.error || 'Failed to rebuild index');
+                }
+            } catch (error) {
+                showError(resultDiv, `Error: ${error.message}`);
+            } finally {
+                hideLoading(btn, 'Rebuild Index');
+            }
+        });
+
+        // Incremental Index
+        document.getElementById('incrementalBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('incrementalBtn');
+            const resultDiv = document.getElementById('incrementalResult');
+            const servicesInput = document.getElementById('servicesInput').value.trim();
+            
+            let services = null;
+            if (servicesInput) {
+                try {
+                    services = JSON.parse(servicesInput);
+                } catch (e) {
+                    showError(resultDiv, 'Invalid JSON format for services');
+                    return;
+                }
+            }
+            
+            showLoading(btn, 'Indexing');
+            
+            try {
+                const response = await fetch(`${API_BASE}/semantic/index/incremental`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ services })
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    const stats = data.statistics;
+                    showSuccess(resultDiv, `
+                        <div class="bg-green-500/10 border border-green-500/50 rounded-xl p-6">
+                            <h3 class="text-green-400 font-semibold mb-4">✓ Incremental Indexing Complete</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                                <div class="bg-slate-800/50 p-3 rounded-lg">
+                                    <p class="text-gray-400 text-xs mb-1">Code Items</p>
+                                    <p class="text-white font-semibold text-lg">${stats.code_items || 0}</p>
+                                </div>
+                                <div class="bg-slate-800/50 p-3 rounded-lg">
+                                    <p class="text-gray-400 text-xs mb-1">Flag Items</p>
+                                    <p class="text-white font-semibold text-lg">${stats.flag_items || 0}</p>
+                                </div>
+                                <div class="bg-slate-800/50 p-3 rounded-lg">
+                                    <p class="text-gray-400 text-xs mb-1">Services</p>
+                                    <p class="text-white font-semibold text-lg">${stats.services_indexed || 0}</p>
+                                </div>
+                                <div class="bg-slate-800/50 p-3 rounded-lg">
+                                    <p class="text-gray-400 text-xs mb-1">Files</p>
+                                    <p class="text-white font-semibold text-lg">${stats.files_indexed || 0}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                } else {
+                    showError(resultDiv, data.error || 'Failed to perform incremental indexing');
+                }
+            } catch (error) {
+                showError(resultDiv, `Error: ${error.message}`);
+            } finally {
+                hideLoading(btn, 'Start Incremental Index');
+            }
+        });
+
+        // Index Status
+        document.getElementById('statusBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('statusBtn');
+            const resultDiv = document.getElementById('statusResult');
+            
+            showLoading(btn, 'Loading');
+            
+            try {
+                const response = await fetch(`${API_BASE}/semantic/index/status`);
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    const status = data.data;
+                    showSuccess(resultDiv, `
+                        <div class="bg-blue-500/10 border border-blue-500/50 rounded-xl p-6">
+                            <h3 class="text-blue-400 font-semibold mb-4">Index Status</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between py-2 border-b border-slate-700/50">
+                                    <span class="text-gray-400">Total Code Vectors:</span>
+                                    <span class="text-white font-semibold">${status.total_code_vectors || 0}</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-slate-700/50">
+                                    <span class="text-gray-400">Total Flag Vectors:</span>
+                                    <span class="text-white font-semibold">${status.total_flag_vectors || 0}</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-slate-700/50">
+                                    <span class="text-gray-400">Embedding Dimension:</span>
+                                    <span class="text-white font-semibold">${status.embedding_dimension || 0}</span>
+                                </div>
+                                <div class="flex justify-between py-2">
+                                    <span class="text-gray-400">Index Loaded:</span>
+                                    <span class="text-white font-semibold">${status.is_loaded ? 'Yes' : 'No'}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                } else {
+                    showError(resultDiv, data.error || 'Failed to get status');
+                }
+            } catch (error) {
+                showError(resultDiv, `Error: ${error.message}`);
+            } finally {
+                hideLoading(btn, 'Get Index Status');
+            }
+        });
+
+        // Semantic Search
+        document.getElementById('searchBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('searchBtn');
+            const resultDiv = document.getElementById('searchResult');
+            const query = document.getElementById('searchQuery').value.trim();
+            
+            if (!query) {
+                showError(resultDiv, 'Please enter a search query');
+                return;
+            }
+            
+            const searchData = {
+                query,
+                type: document.getElementById('searchType').value,
+                limit: parseInt(document.getElementById('searchLimit').value),
+                threshold: parseFloat(document.getElementById('searchThreshold').value)
+            };
+            
+            showLoading(btn, 'Searching');
+            
+            try {
+                const response = await fetch(`${API_BASE}/semantic/search`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(searchData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    const results = data.data.results;
+                    if (results.length === 0) {
+                        showSuccess(resultDiv, '<div class="bg-yellow-500/10 border border-yellow-500/50 rounded-xl p-4"><p class="text-yellow-400">No results found</p></div>');
+                    } else {
+                        const resultsHtml = results.map((r, i) => {
+                            if (r.type === 'code') {
+                                return `
+                                    <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-4 hover:border-slate-600 transition-colors">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <div>
+                                                <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-md">CODE</span>
+                                                <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded-md ml-2">Score: ${r.score.toFixed(3)}</span>
+                                            </div>
+                                        </div>
+                                        <h4 class="text-white font-semibold mb-1">${r.method_name || 'Unknown Method'}</h4>
+                                        <p class="text-gray-400 text-sm mb-2">${r.class_name || ''} • ${r.service || ''}</p>
+                                        <p class="text-xs text-gray-500 mb-2">${r.file_path || ''}</p>
+                                        <pre class="bg-slate-900 text-gray-300 p-3 rounded-lg text-xs overflow-x-auto"><code>${escapeHtml(r.code_snippet)}</code></pre>
+                                    </div>
+                                `;
+                            } else {
+                                return `
+                                    <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-4 hover:border-slate-600 transition-colors">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <div>
+                                                <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-md">FLAG</span>
+                                                <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded-md ml-2">Score: ${r.score.toFixed(3)}</span>
+                                            </div>
+                                        </div>
+                                        <h4 class="text-white font-semibold mb-1">${r.flag_name}</h4>
+                                        <p class="text-gray-400 text-sm mb-1">State: <span class="${r.state === 'enabled' ? 'text-green-400' : 'text-red-400'}">${r.state}</span></p>
+                                        <p class="text-gray-400 text-sm">Service: ${r.service || 'N/A'}</p>
+                                        ${r.description ? `<p class="text-gray-500 text-sm mt-2">${r.description}</p>` : ''}
+                                    </div>
+                                `;
+                            }
+                        }).join('');
+                        
+                        showSuccess(resultDiv, `
+                            <div class="space-y-3">
+                                <h3 class="text-white font-semibold">Found ${results.length} result(s)</h3>
+                                ${resultsHtml}
+                            </div>
+                        `);
+                    }
+                } else {
+                    showError(resultDiv, data.error || 'Search failed');
+                }
+            } catch (error) {
+                showError(resultDiv, `Error: ${error.message}`);
+            } finally {
+                hideLoading(btn, 'Search');
+            }
+        });
+
+        // Find Similar
+        document.getElementById('similarBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('similarBtn');
+            const resultDiv = document.getElementById('similarResult');
+            const itemType = document.getElementById('similarType').value;
+            
+            const requestData = {
+                item_type: itemType,
+                limit: parseInt(document.getElementById('similarLimit').value),
+                threshold: parseFloat(document.getElementById('similarThreshold').value)
+            };
+            
+            if (itemType === 'code') {
+                const itemId = document.getElementById('similarItemId').value.trim();
+                if (!itemId) {
+                    showError(resultDiv, 'Please enter an item ID');
+                    return;
+                }
+                requestData.item_id = parseInt(itemId);
+            } else {
+                const flagName = document.getElementById('similarFlagName').value.trim();
+                if (!flagName) {
+                    showError(resultDiv, 'Please enter a flag name');
+                    return;
+                }
+                requestData.flag_name = flagName;
+            }
+            
+            showLoading(btn, 'Finding Similar');
+            
+            try {
+                const response = await fetch(`${API_BASE}/semantic/similar`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    const items = data.data.similar_items;
+                    if (items.length === 0) {
+                        showSuccess(resultDiv, '<div class="bg-yellow-500/10 border border-yellow-500/50 rounded-xl p-4"><p class="text-yellow-400">No similar items found</p></div>');
+                    } else {
+                        const itemsHtml = items.map(item => {
+                            if (itemType === 'code') {
+                                return `
+                                    <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded-md">Score: ${item.score.toFixed(3)}</span>
+                                        </div>
+                                        <h4 class="text-white font-semibold mb-1">${item.method_name || 'Unknown'}</h4>
+                                        <p class="text-gray-400 text-sm mb-2">${item.class_name || ''} • ${item.service || ''}</p>
+                                        <p class="text-xs text-gray-500 mb-2">${item.file_path || ''}</p>
+                                        <pre class="bg-slate-900 text-gray-300 p-3 rounded-lg text-xs overflow-x-auto"><code>${escapeHtml(item.code_snippet)}</code></pre>
+                                    </div>
+                                `;
+                            } else {
+                                return `
+                                    <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded-md">Score: ${item.score.toFixed(3)}</span>
+                                        </div>
+                                        <h4 class="text-white font-semibold mb-1">${item.flag_name}</h4>
+                                        <p class="text-gray-400 text-sm">State: <span class="${item.state === 'enabled' ? 'text-green-400' : 'text-red-400'}">${item.state}</span></p>
+                                        <p class="text-gray-400 text-sm">Service: ${item.service || 'N/A'}</p>
+                                    </div>
+                                `;
+                            }
+                        }).join('');
+                        
+                        showSuccess(resultDiv, `
+                            <div class="space-y-3">
+                                <h3 class="text-white font-semibold">Found ${items.length} similar item(s)</h3>
+                                ${itemsHtml}
+                            </div>
+                        `);
+                    }
+                } else {
+                    showError(resultDiv, data.error || 'Failed to find similar items');
+                }
+            } catch (error) {
+                showError(resultDiv, `Error: ${error.message}`);
+            } finally {
+                hideLoading(btn, 'Find Similar');
+            }
+        });
+
+        // Related Flags
+        document.getElementById('relatedFlagsBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('relatedFlagsBtn');
+            const resultDiv = document.getElementById('relatedFlagsResult');
+            const codeSnippet = document.getElementById('relatedFlagsCode').value.trim();
+            
+            if (!codeSnippet) {
+                showError(resultDiv, 'Please enter a code snippet');
+                return;
+            }
+            
+            const requestData = {
+                code_snippet: codeSnippet,
+                limit: parseInt(document.getElementById('relatedFlagsLimit').value),
+                threshold: parseFloat(document.getElementById('relatedFlagsThreshold').value)
+            };
+            
+            showLoading(btn, 'Finding Flags');
+            
+            try {
+                const response = await fetch(`${API_BASE}/semantic/related-flags`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    const flags = data.data.related_flags;
+                    const directlyUsed = data.data.flags_directly_used || [];
+                    
+                    if (flags.length === 0) {
+                        showSuccess(resultDiv, '<div class="bg-yellow-500/10 border border-yellow-500/50 rounded-xl p-4"><p class="text-yellow-400">No related flags found</p></div>');
+                    } else {
+                        const flagsHtml = flags.map(flag => `
+                            <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
+                                <div class="flex items-start justify-between mb-2">
+                                    <div>
+                                        <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded-md">Score: ${flag.score.toFixed(3)}</span>
+                                        ${flag.directly_used ? '<span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-md ml-2">DIRECTLY USED</span>' : ''}
+                                    </div>
+                                </div>
+                                <h4 class="text-white font-semibold mb-1">${flag.flag_name}</h4>
+                                <p class="text-gray-400 text-sm">State: <span class="${flag.state === 'enabled' ? 'text-green-400' : 'text-red-400'}">${flag.state}</span></p>
+                                <p class="text-gray-400 text-sm">Service: ${flag.service || 'N/A'}</p>
+                            </div>
+                        `).join('');
+                        
+                        showSuccess(resultDiv, `
+                            <div class="space-y-3">
+                                <h3 class="text-white font-semibold">Found ${flags.length} related flag(s)</h3>
+                                ${directlyUsed.length > 0 ? `<p class="text-sm text-gray-400">Directly used flags: ${directlyUsed.join(', ')}</p>` : ''}
+                                ${flagsHtml}
+                            </div>
+                        `);
+                    }
+                } else {
+                    showError(resultDiv, data.error || 'Failed to find related flags');
+                }
+            } catch (error) {
+                showError(resultDiv, `Error: ${error.message}`);
+            } finally {
+                hideLoading(btn, 'Find Related Flags');
+            }
+        });
+
+        // Related Code
+        document.getElementById('relatedCodeBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('relatedCodeBtn');
+            const resultDiv = document.getElementById('relatedCodeResult');
+            const flagName = document.getElementById('relatedCodeFlag').value.trim();
+            
+            if (!flagName) {
+                showError(resultDiv, 'Please enter a flag name');
+                return;
+            }
+            
+            const requestData = {
+                flag_name: flagName,
+                limit: parseInt(document.getElementById('relatedCodeLimit').value),
+                threshold: parseFloat(document.getElementById('relatedCodeThreshold').value)
+            };
+            
+            showLoading(btn, 'Finding Code');
+            
+            try {
+                const response = await fetch(`${API_BASE}/semantic/related-code`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    const code = data.data.related_code;
+                    
+                    if (code.length === 0) {
+                        showSuccess(resultDiv, '<div class="bg-yellow-500/10 border border-yellow-500/50 rounded-xl p-4"><p class="text-yellow-400">No related code found</p></div>');
+                    } else {
+                        const codeHtml = code.map(item => `
+                            <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
+                                <div class="flex items-start justify-between mb-2">
+                                    <div>
+                                        <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded-md">Score: ${item.score.toFixed(3)}</span>
+                                        ${item.directly_uses_flag ? '<span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-md ml-2">DIRECT USAGE</span>' : ''}
+                                    </div>
+                                </div>
+                                <h4 class="text-white font-semibold mb-1">${item.method_name || 'Unknown Method'}</h4>
+                                <p class="text-gray-400 text-sm mb-2">${item.class_name || ''} • ${item.service || ''}</p>
+                                <p class="text-xs text-gray-500 mb-2">${item.file_path || ''}</p>
+                                ${item.flags_used && item.flags_used.length > 0 ? `<p class="text-xs text-blue-400 mb-2">Flags used: ${item.flags_used.join(', ')}</p>` : ''}
+                                <pre class="bg-slate-900 text-gray-300 p-3 rounded-lg text-xs overflow-x-auto"><code>${escapeHtml(item.code_snippet)}</code></pre>
+                            </div>
+                        `).join('');
+                        
+                        showSuccess(resultDiv, `
+                            <div class="space-y-3">
+                                <h3 class="text-white font-semibold">Found ${code.length} related code snippet(s)</h3>
+                                ${codeHtml}
+                            </div>
+                        `);
+                    }
+                } else {
+                    showError(resultDiv, data.error || 'Failed to find related code');
+                }
+            } catch (error) {
+                showError(resultDiv, `Error: ${error.message}`);
+            } finally {
+                hideLoading(btn, 'Find Related Code');
+            }
+        });
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

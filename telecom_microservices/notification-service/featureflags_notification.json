@@ -1,0 +1,23 @@
+[
+  { "serviceName": "notification-service", "featureFlagName": "notification_routing_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_failover_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_multichannel_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_channel_sms_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_channel_email_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_channel_push_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_channel_ivr_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_dnd_checks_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_consent_checks_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_senderid_whitelist_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_templates_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_rate_global_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_rate_msisdn_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_campaign_window_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_retry_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_idempotency_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_audit_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_sms_unicode_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_sms_fragmentation_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_metrics_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" },
+  { "serviceName": "notification-service", "featureFlagName": "notification_diag_headers_enable", "featureFlagState": "disabled", "flagCreatedDate": "2025-12-14", "flagDeprecationDate": "" }
+]

@@ -1,0 +1,3236 @@
+[
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_2fa",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_account_lock",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_audit_logging",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_email_verification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_mfa",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_passwordless",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_profile_edit",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_registration",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_session_timeout",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_sso",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "auth-service",
+    "featureFlagName": "auth_enable_user_deactivation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_advance_payment_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_audit_trail",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_bundle_discounts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_coupon_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_credit_memo_creation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_currency_conversion",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_currency_rate_updates",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_debit_memo_creation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_debt_collection_integration",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_discount_application",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_discrepancy_detection",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_history_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_installment_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_interest_accrual",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_international_billing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_invoice_aging_analysis",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_invoice_generation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_invoice_history",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_invoice_numbering",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_invoice_reminders",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_invoice_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_late_fee_calculation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_manual_reconciliation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_multi_currency",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_partial_payment_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_payment_history",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_payment_plan_creation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_payment_reconciliation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_penalty_assessment",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_promotional_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_reconciliation_automation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_reversal_processing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_scheduled_invoices",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_subscription_discount",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_transaction_history",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_transaction_matching",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_unmatched_invoice_handling",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_write_off_management",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_enable_write_off_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_handle_orphaned_invoices",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_tax_by_region",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_tax_calculation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_tax_compliance",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "billing-invoicing",
+    "featureFlagName": "billing_tax_reporting",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_account_hierarchy",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_account_linking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_account_linking_validation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_account_migration",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_activation_delay",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_addon_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_address_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_address_validation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_age_verification",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_aml_check",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_auto_activation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_auto_renewal",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_behavior_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_billing_address",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_billing_notification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_bulk_operations",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_churn_prediction",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_communication_channel_preference",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_communication_preferences",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_consent_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_contact_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_contract_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_contract_renewal",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_contract_templates",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_cookie_preferences",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_customer_journey_tracking",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_customer_segmentation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_data_anonymization",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_data_deletion",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_data_export",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_data_retention_policy",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_document_upload",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_dormant_account_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_email_verification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_engagement_tracking",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_fraud_detection",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_gdpr_compliance",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_identity_verification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_invoice_access",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_kyc_validation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_language_preferences",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_lifetime_value_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_manual_approval",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_manual_renewal",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_marketing_opt_in",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_notification_preferences",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_payment_method_management",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_phone_verification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_plan_change",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_privacy_preferences",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_profile_completion_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_profile_image",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_profile_update",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_reactivation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_registration",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_sanctions_screening",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_signature_capture",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_subscription_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_suspension",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "customer-management",
+    "featureFlagName": "customer_enable_termination",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_cost_allocation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_cost_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_cross_warehouse_transfer",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_demand_planning",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_disposal_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_end_of_life_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_equipment_depreciation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_equipment_maintenance",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_equipment_registration",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_equipment_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_forecasting",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_inventory_adjustment",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_inventory_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_lot_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_obsolescence_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_order_allocation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_order_fulfillment",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_order_packing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_order_shipping",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_price_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_product_lifecycle_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_stock_counting",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_stock_level_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_stock_transfer",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_supplier_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_supplier_orders",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_supplier_performance_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_supplier_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_turnover_analysis",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_valuation_methods",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_warehouse_assignment",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_warehouse_location_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "inventory-management",
+    "featureFlagName": "inventory_enable_warehouse_setup",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_advanced_enable_ml_demand_forecasting",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_advanced_enable_order_recommendations",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_advanced_enable_predictive_inventory",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_analytics_enable_fulfillment_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_analytics_enable_order_analytics",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_analytics_enable_shipping_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_compliance_enable_audit_logging",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_compliance_enable_compliance_reporting",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_compliance_enable_order_retention",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_fulfillment_enable_delivery_tracking",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_fulfillment_enable_order_allocation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_fulfillment_enable_packing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_fulfillment_enable_picking",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_fulfillment_enable_shipping",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_inventory_enable_backorder",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_inventory_enable_reserve_items",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_inventory_enable_stock_checking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_lifecycle_enable_cancellation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_lifecycle_enable_creation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_lifecycle_enable_modification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_lifecycle_enable_order_status_history",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_lifecycle_enable_order_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_notifications_enable_delivery_updates",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_notifications_enable_order_confirmation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_notifications_enable_order_updates",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_pricing_enable_billing_sync",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_pricing_enable_discount_application",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_pricing_enable_dynamic_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_pricing_enable_order_billing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_pricing_enable_tax_calculation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_products_enable_addon_products",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_products_enable_bundle_products",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_products_enable_product_variants",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_products_enable_service_products",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_provisioning_enable_activation_delay",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_provisioning_enable_device_shipping",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_provisioning_enable_service_provisioning",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "order-management",
+    "featureFlagName": "order_provisioning_enable_sim_activation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_advanced_enable_dynamic_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_advanced_enable_ml_fraud_detection",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_advanced_enable_payment_optimization",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_advanced_enable_predictive_churn",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_analytics_enable_customer_payment_analytics",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_analytics_enable_payment_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_analytics_enable_payment_method_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_analytics_enable_revenue_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_billing_enable_bill_generation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_billing_enable_billing_cycle_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_billing_enable_billing_notifications",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_billing_enable_invoice_billing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_billing_enable_usage_based_billing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_compliance_enable_aml_check",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_compliance_enable_fraud_detection",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_compliance_enable_pci_dss_compliance",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_compliance_enable_transaction_monitoring",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_currency_enable_currency_conversion",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_currency_enable_currency_rate_management",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_currency_enable_multi_currency",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_dispute_enable_chargeback_handling",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_dispute_enable_dispute_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_dispute_enable_dispute_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_method_enable_bank_transfer",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_method_enable_buy_now_pay_later",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_method_enable_credit_card",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_method_enable_cryptocurrency",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_method_enable_debit_card",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_method_enable_digital_wallet",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_notification_enable_invoice_notification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_notification_enable_payment_confirmation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_notification_enable_payment_failure_notification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_notification_enable_refund_notification",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_reconciliation_enable_discrepancy_handling",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_reconciliation_enable_payment_reconciliation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_reconciliation_enable_transaction_matching",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_recurring_enable_auto_renew",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_recurring_enable_billing_schedule",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_recurring_enable_recurring_charges",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_recurring_enable_subscription_billing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_refund_enable_full_refund",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_refund_enable_partial_refund",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_refund_enable_refund_automation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_refund_enable_refund_reversal",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_transaction_enable_installment_payment",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_transaction_enable_payment_authorization",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_transaction_enable_payment_settlement",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_transaction_enable_payment_settlement_webhook",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "payment-processing",
+    "featureFlagName": "payment_transaction_enable_single_payment",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_ai_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_allocation_rules",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_availability_check",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_backorder",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_bulk_upload",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_bundle_conflicts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_bundle_creation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_bundle_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_bundle_pricing",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_bundle_publishing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_bundle_recommendations",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_category_hierarchy",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_category_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_category_recommendations",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_device_availability",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_device_catalog",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_device_images",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_device_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_device_reviews",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_device_specifications",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_discount_rules",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_dynamic_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_fulfillment_options",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_inventory_sync",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_ml_recommendations",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_plan_bundling",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_plan_comparisons",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_plan_customization",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_plan_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_plan_recommendations",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_predictive_inventory",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_preorder",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_pricing_rules",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_categorization",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_creation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_deletion",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_import",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_lifecycle",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_modification",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_reviews",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_product_versioning",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_promotional_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_purchase_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_regional_availability",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_regional_pricing",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_review_images",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_review_moderation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_review_ratings",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_search_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_service_plans",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_stock_levels",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_view_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_volume_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "product-catalog",
+    "featureFlagName": "catalog_enable_warehouse_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_5g_network",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_add_on_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_alerts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_apn_config",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_audit_logs",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_authentication",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_auto_scaling",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_bandwidth_allocation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_billing_sync",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_call_forwarding",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_carrier_routing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_carrier_specific_config",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_data_config",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_device_activation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_dlp",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_encryption",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_firewall_config",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_imei_assignment",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_inter_carrier_communication",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_latency_control",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_msisdn_allocation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_multi_carrier",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_network_config",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_network_slicing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_notifications",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_orchestration",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_overage_charges",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_performance_metrics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_plan_change",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_priority_levels",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_provisioning_reports",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_qos_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_quota_management",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_recurring_charges",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_roaming_config",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_security_groups",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_service_downgrade",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_service_status_updates",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_service_suspension",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_service_termination",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_service_upgrade",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_sim_activation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_slice_isolation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_slice_management",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_smart_provisioning",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_sms_config",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_supplementary_services",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_throttling",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_traffic_shaping",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_usage_analytics",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_usage_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_voice_config",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_voicemail",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_vpn_config",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "service-provisioning",
+    "featureFlagName": "provisioning_enable_workflow_automation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_analytics_cart_abandonment_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_analytics_conversion_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_analytics_funnel_analysis",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_analytics_product_performance",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_analytics_revenue_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_analytics_session_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_analytics_user_behavior_tracking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_bundling_bundle_conflicts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_bundling_bundle_pricing",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_bundling_bundle_recommendations",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_bundling_create_bundles",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_bundling_device_plan_bundles",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_bundling_dynamic_bundles",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_bundling_plan_bundling",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_bundling_service_bundles",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_billing_address_validation",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_express_checkout",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_guest_checkout",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_multiple_payment_methods",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_one_step_checkout",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_payment_gateway_integration",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_payment_plan_selection",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_registered_checkout",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_checkout_shipping_address_validation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_compatibility_device_plan_matching",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_compatibility_device_service_compatibility",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_compatibility_feature_compatibility",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_compatibility_international_compatibility",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_compatibility_network_compatibility",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_compatibility_sim_card_compatibility",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_fees_activation_fees",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_fees_environmental_fees",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_fees_processing_fees",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_fees_service_fees",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_fees_shipping_fees",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_financing_buy_now_pay_later",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_financing_device_financing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_financing_financing_options",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_financing_financing_rates",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_financing_installment_plans",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_financing_lease_options",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_inventory_availability_alerts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_inventory_backorder_support",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_inventory_hold_duration",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_inventory_pre_order_support",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_inventory_real_time_sync",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_inventory_reserve_items",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_inventory_stock_checking",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_inventory_warehouse_selection",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_notifications_abandoned_cart_notifications",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_notifications_deal_notifications",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_notifications_order_updates",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_notifications_price_drop_alerts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_notifications_promotional_notifications",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_notifications_stock_alerts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_offers_bundle_offers",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_offers_flash_sales",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_offers_free_shipping_offers",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_offers_limited_time_offers",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_offers_loyalty_rewards",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_offers_referral_offers",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_offers_seasonal_offers",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_anonymous_cart",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_bulk_order",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_cart_merge",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_cart_notifications",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_cart_recovery",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_cart_sharing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_persistent_cart",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_purchase_order",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_quick_order",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_operations_saved_for_later",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_bundle_discounts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_dynamic_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_loyalty_discounts",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_payment_method_discounts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_promotional_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_region_based_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_segment_based_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_time_based_pricing",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_pricing_volume_discounts",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_addon_products",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_bundled_products",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_device_products",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_personalization",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_product_comparison",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_product_filtering",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_product_search",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_product_sorting",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_recently_viewed",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_recommendations",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_service_products",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_product_management_wishlist",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_tax_by_region",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_tax_calculation",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "shopping-cart",
+    "featureFlagName": "cart_tax_compliance",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_routing_enable",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_failover_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_multichannel_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_channel_sms_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_channel_email_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_channel_push_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_channel_ivr_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_dnd_checks_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_consent_checks_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_senderid_whitelist_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_templates_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_rate_global_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_rate_msisdn_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_campaign_window_enable",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_retry_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_idempotency_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_audit_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_sms_unicode_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_sms_fragmentation_enable",
+    "featureFlagState": "disabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_metrics_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  },
+  {
+    "serviceName": "notification-service",
+    "featureFlagName": "notification_diag_headers_enable",
+    "featureFlagState": "enabled",
+    "flagCreatedDate": "2025-12-14",
+    "flagDeprecationDate": ""
+  }
+]

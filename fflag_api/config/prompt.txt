@@ -1,0 +1,20 @@
+Task: Feature Flag Cleanup (Production Refactoring) Role: Senior Developer Target Flag: @targetflag
+
+Instructions:
+
+Logic Promotion: Remove the conditional check for @targetflag to make the feature permanent.
+
+Conditional Handling:
+
+If the flag is a negative guard (e.g., if (!enabled) { throw/return }), delete the entire block.
+
+If the flag is a positive wrapper (e.g., if (enabled) { ... }), remove the wrapper and promote the inner logic.
+
+Strict Scope: Do not modify unrelated code. Preserve all existing comments and logic exactly.
+
+Formatting: Adjust indentation of promoted logic to match the surrounding scope.
+
+CRITICAL - Output Format: Return ONLY the raw source code. Do not use markdown code blocks (```). Do not include any introductory text, explanations, or concluding remarks.
+
+Code to Refactor: 
+@code

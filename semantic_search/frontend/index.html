@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Repository Search</title>
+
+    <!-- Existing styles -->
+    <link rel="stylesheet" href="outfit.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- Mermaid for mind map visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🔍 Semantic Repository Search</h1>
+            <p class="subtitle">Find code patterns and feature flags across microservices</p>
+        </header>
+
+        <!-- Search Mode Tabs -->
+        <div class="search-tabs">
+            <button class="tab-btn active" data-mode="flag">
+                <span class="tab-icon">🏴</span>
+                By Flag Name
+            </button>
+            <button class="tab-btn" data-mode="code">
+                <span class="tab-icon">💻</span>
+                By Code Fragment
+            </button>
+            <button class="tab-btn" data-mode="natural">
+                <span class="tab-icon">💬</span>
+                Natural Language
+            </button>
+            <button class="tab-btn" data-mode="admin">
+                <span class="tab-icon">⚙️</span>
+                Admin & Stats
+            </button>
+        </div>
+
+        <!-- Search Input Section -->
+        <div class="search-section">
+            <!-- Flag Name Search -->
+            <div class="search-mode" id="mode-flag">
+                <div class="search-input-group">
+                    <label for="flag-search">Feature Flag Name</label>
+                    <input type="text" id="flag-search" class="search-input" placeholder="e.g., auth_enable_2fa">
+                    <button class="search-btn" onclick="searchByFlag()">
+                        Search Flag
+                    </button>
+                </div>
+            </div>
+
+            <!-- Code Fragment Search -->
+            <div class="search-mode hidden" id="mode-code">
+                <div class="search-input-group">
+                    <label for="code-search">Code Fragment</label>
+                    <textarea id="code-search" class="code-textarea" placeholder="Paste your code snippet here..."
+                        rows="6"></textarea>
+                    <button class="search-btn" onclick="searchBySimilarity()">
+                        Find Similar Code
+                    </button>
+                </div>
+            </div>
+
+            <!-- Natural Language Search -->
+            <div class="search-mode hidden" id="mode-natural">
+                <div class="search-input-group">
+                    <label for="natural-search">Natural Language Query</label>
+                    <input type="text" id="natural-search" class="search-input"
+                        placeholder="e.g., authentication with two factor security">
+                    <button class="search-btn" onclick="searchNatural()">
+                        Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- Admin & Stats Section -->
+            <div class="search-mode hidden" id="mode-admin">
+                <div class="admin-dashboard">
+                    <div class="admin-header">
+                        <div class="health-status">
+                            <h3>System Health</h3>
+                            <div id="health-indicator" class="health-badge checking">
+                                <span class="status-dot"></span>
+                                <span id="health-text">Checking...</span>
+                            </div>
+                        </div>
+                        <button class="action-btn warning-btn" onclick="confirmRebuild()">
+                            🔄 Rebuild Index
+                        </button>
+                    </div>
+
+                    <h3>Index Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-icon">📊</span>
+                            <div class="stat-info">
+                                <span class="stat-value" id="admin-vectors">-</span>
+                                <span class="stat-label">Total Vectors</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-icon">📝</span>
+                            <div class="stat-info">
+                                <span class="stat-value" id="admin-snippets">-</span>
+                                <span class="stat-label">Code Snippets</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-icon">🚩</span>
+                            <div class="stat-info">
+                                <span class="stat-value" id="admin-flags">-</span>
+                                <span class="stat-label">Feature Flags</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-icon">🏢</span>
+                            <div class="stat-info">
+                                <span class="stat-value" id="admin-services">-</span>
+                                <span class="stat-label">Services</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="json-viewer">
+                        <h3>Raw Stats Response</h3>
+                        <pre id="raw-stats">Loading...</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Searching...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="error-message hidden"></div>
+
+        <!-- View Toggle -->
+        <div id="view-toggle" class="view-toggle hidden">
+            <button class="view-btn active" data-view="grid">
+                📊 Grid View
+            </button>
+            <button class="view-btn" data-view="mindmap">
+                🧠 Mind Map
+            </button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-container" class="results-container hidden">
+            <!-- Grid View -->
+            <div id="grid-view" class="result-view">
+                <h2>Search Results (<span id="result-count">0</span>)</h2>
+                <div class="table-container">
+                    <table id="results-table" class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>File Path</th>
+                                <th>Line</th>
+                                <th>Code Snippet</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-tbody">
+                            <!-- Results populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Mind Map View -->
+            <div id="mindmap-view" class="result-view hidden">
+                <h2>Dependency Graph</h2>
+                <div id="mindmap-container" class="mindmap-container">
+                    <pre class="mermaid" id="mermaid-diagram"></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Footer -->
+        <div id="stats-footer" class="stats-footer">
+            <div class="stat-item">
+                <span class="stat-label">Total Vectors:</span>
+                <span class="stat-value" id="stat-vectors">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Code Snippets:</span>
+                <span class="stat-value" id="stat-snippets">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Feature Flags:</span>
+                <span class="stat-value" id="stat-flags">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Services:</span>
+                <span class="stat-value" id="stat-services">-</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="visualization.js"></script>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#6366f1',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#818cf8',
+                lineColor: '#94a3b8',
+                secondaryColor: '#8b5cf6',
+                tertiaryColor: '#ec4899'
+            }
+        });
+
+        // Load stats on page load
+        window.addEventListener('DOMContentLoaded', loadStats);
+    </script>
+</body>
+
+</html>

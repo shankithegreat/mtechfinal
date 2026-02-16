@@ -1,0 +1,18 @@
+{
+  "flags": [
+    {
+      "name": "FLAG_flagn",
+      "defaultValue": "FEATURE_auth_enable_email_verification",
+      "files": [
+        "frontend/app.js"
+      ]
+    },
+    {
+      "name": "FLAG_anotherflag",
+      "defaultValue": "FEATURE_auth_enable_mobile_verification",
+      "files": [
+        "frontend/app.js"
+      ]
+    }
+  ]
+}

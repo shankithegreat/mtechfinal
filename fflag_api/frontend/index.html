@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DynaML - Ultra Modern SLM Interface</title>
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="outfit.css">
+</head>
+
+<body>
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="glass-panel p-8 rounded-2xl w-full max-w-lg relative z-10">
+            <h1 class="text-3xl font-bold text-white mb-6 text-center tracking-tight">Feature Flag Manager</h1>
+
+            <div class="space-y-6">
+                <!-- Service Dropdown -->
+                <div class="space-y-2">
+                    <label class="text-gray-400 text-sm font-medium ml-1">Service Name</label>
+                    <div class="relative">
+                        <select id="serviceDropdown"
+                            class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block p-4 shadow-sm appearance-none cursor-pointer transition-all hover:bg-slate-800/70">
+                            <option value="" disabled selected>Select a Service</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Flag Typeahead -->
+                <div class="space-y-2">
+                    <label class="text-gray-400 text-sm font-medium ml-1">Feature Flag</label>
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            id="flagInput" 
+                            placeholder="Select or type to search..." 
+                            disabled
+                            class="w-full bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block p-4 shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-800/70 focus:bg-slate-800/70"
+                        />
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                        <!-- Dropdown list for typeahead suggestions -->
+                        <div id="flagDropdownList" class="absolute top-full left-0 right-0 mt-2 bg-slate-800 border border-slate-700 rounded-xl shadow-lg max-h-64 overflow-y-auto hidden z-50">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Process Button -->
+                <button id="cleanupBtn" disabled
+                    class="w-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-4 text-center mr-2 mb-2 transition-all transform hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg shadow-blue-500/30">
+                    Process Clean Up
+                </button>
+            </div>
+
+            <div id="statusMessage" class="mt-4 text-center text-sm hidden"></div>
+        </div>
+
+        <!-- Decorative blobs -->
+        <div
+            class="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20">
+        </div>
+        <div
+            class="absolute top-20 right-20 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20">
+        </div>
+        <div
+            class="absolute -bottom-8 left-40 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceDropdown = document.getElementById('serviceDropdown');
+            const flagInput = document.getElementById('flagInput');
+            const flagDropdownList = document.getElementById('flagDropdownList');
+            const cleanupBtn = document.getElementById('cleanupBtn');
+            const statusMessage = document.getElementById('statusMessage');
+
+            let allFlags = [];
+            let filteredFlags = [];
+            let selectedFlagName = '';
+
+            // Fetch all flags
+            fetch('http://127.0.0.1:1212/fflag/getallflags', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    allFlags = data;
+                    populateServiceDropdown();
+                })
+                .catch(error => {
+                    console.error('Error fetching flags:', error);
+                    showStatus('Failed to load flags.', 'text-red-400');
+                });
+
+            function populateServiceDropdown() {
+                const services = [...new Set(allFlags.map(item => item.serviceName))];
+                services.forEach(service => {
+                    const option = document.createElement('option');
+                    option.value = service;
+                    option.textContent = service;
+                    serviceDropdown.appendChild(option);
+                });
+            }
+
+            serviceDropdown.addEventListener('change', () => {
+                const selectedService = serviceDropdown.value;
+                flagInput.value = '';
+                selectedFlagName = '';
+                flagInput.disabled = false;
+                cleanupBtn.disabled = true;
+                flagDropdownList.innerHTML = '';
+                flagDropdownList.classList.add('hidden');
+            });
+
+            flagInput.addEventListener('input', (e) => {
+                const selectedService = serviceDropdown.value;
+                const searchTerm = e.target.value.toLowerCase();
+
+                // Filter flags for the selected service
+                const serviceFlagsOnly = allFlags.filter(item => item.serviceName === selectedService);
+                
+                if (searchTerm === '') {
+                    filteredFlags = serviceFlagsOnly;
+                } else {
+                    filteredFlags = serviceFlagsOnly.filter(item => 
+                        item.featureFlagName.toLowerCase().includes(searchTerm)
+                    );
+                }
+
+                // Populate dropdown with filtered results
+                populateFlagDropdown();
+                
+                // Show dropdown if there are results or input is focused
+                if (filteredFlags.length > 0) {
+                    flagDropdownList.classList.remove('hidden');
+                } else if (searchTerm === '') {
+                    flagDropdownList.classList.remove('hidden');
+                } else {
+                    flagDropdownList.classList.add('hidden');
+                }
+
+                selectedFlagName = '';
+                cleanupBtn.disabled = true;
+            });
+
+            function populateFlagDropdown() {
+                flagDropdownList.innerHTML = '';
+
+                if (filteredFlags.length === 0) {
+                    const noResultsDiv = document.createElement('div');
+                    noResultsDiv.className = 'px-4 py-3 text-gray-400 text-sm';
+                    noResultsDiv.textContent = 'No flags found';
+                    flagDropdownList.appendChild(noResultsDiv);
+                    return;
+                }
+
+                filteredFlags.forEach(flag => {
+                    const flagDiv = document.createElement('div');
+                    flagDiv.className = 'px-4 py-3 cursor-pointer hover:bg-slate-700 border-b border-slate-700 transition-colors last:border-b-0';
+                    
+                    // Color coding based on state
+                    let stateColor = 'text-gray-300';
+                    if (flag.featureFlagState.toLowerCase() === 'enabled') {
+                        stateColor = 'text-green-400';
+                    } else if (flag.featureFlagState.toLowerCase() === 'disabled') {
+                        stateColor = 'text-red-400';
+                    }
+
+                    flagDiv.innerHTML = `<div class="text-white">${flag.featureFlagName}</div><div class="text-xs ${stateColor}">${flag.featureFlagState}</div>`;
+                    
+                    flagDiv.addEventListener('click', () => {
+                        flagInput.value = flag.featureFlagName;
+                        selectedFlagName = flag.featureFlagName;
+                        flagDropdownList.classList.add('hidden');
+                        cleanupBtn.disabled = false;
+                        
+                        // Visual feedback on input based on flag state
+                        if (flag.featureFlagState.toLowerCase() === 'enabled') {
+                            flagInput.classList.remove('text-red-400');
+                            flagInput.classList.add('text-green-400');
+                        } else {
+                            flagInput.classList.remove('text-green-400');
+                            flagInput.classList.add('text-red-400');
+                        }
+                    });
+
+                    flagDropdownList.appendChild(flagDiv);
+                });
+            }
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('#flagInput') && !e.target.closest('#flagDropdownList')) {
+                    flagDropdownList.classList.add('hidden');
+                }
+            });
+
+            // Show dropdown on focus
+            flagInput.addEventListener('focus', () => {
+                const selectedService = serviceDropdown.value;
+                if (selectedService && flagInput.value === '') {
+                    const serviceFlagsOnly = allFlags.filter(item => item.serviceName === selectedService);
+                    filteredFlags = serviceFlagsOnly;
+                    populateFlagDropdown();
+                    flagDropdownList.classList.remove('hidden');
+                }
+            });
+
+            cleanupBtn.addEventListener('click', () => {
+                const serviceName = serviceDropdown.value;
+                const flagName = selectedFlagName || flagInput.value;
+
+                if (!serviceName || !flagName) return;
+
+                cleanupBtn.disabled = true;
+                cleanupBtn.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Processing...';
+
+                fetch('http://127.0.0.1:1212/fflag/processcleanup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        repoName: serviceName,
+                        flagName: flagName
+                    })
+                })
+                    .then(response => {
+                        if (response.ok) return response.text();
+                        throw new Error('Network response was not ok');
+                    })
+                    .then(data => {
+                        showStatus(data || 'Clean up processed successfully!', 'text-green-400');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showStatus('Error processing clean up.', 'text-red-400');
+                    })
+                    .finally(() => {
+                        cleanupBtn.disabled = false;
+                        cleanupBtn.textContent = 'Process Clean Up';
+                    });
+            });
+
+            function showStatus(msg, colorClass) {
+                statusMessage.textContent = msg;
+                statusMessage.className = `mt-4 text-center text-sm ${colorClass} block`;
+                setTimeout(() => {
+                    statusMessage.className = 'mt-4 text-center text-sm hidden';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+
+</html>

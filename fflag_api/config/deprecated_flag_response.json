@@ -1,0 +1,19 @@
+{
+  "status": "SUCCESS",
+  "list": [
+    {
+      "vsad": "test",
+      "gitGroupName": "test",
+      "gitRepoName": "customer-management",
+      "gitRepoURL": "",
+      "deprecatedFeatureFlags": [
+        {
+          "profileName": "customer-management-profile",
+          "featureFlagName": "customer_enable_suspension",
+          "featureFlagState": "ENABLED",
+          "flagDeprecationDate": "2025-03-03T00:00:00"
+        }
+      ]
+    }
+  ]
+}

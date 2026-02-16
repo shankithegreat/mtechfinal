@@ -1,0 +1,87 @@
+# Technical and Architecture Document
+## AI-Driven Framework for Automated Feature Flag Lifecycle Management
+
+### 1. Executive Summary
+The **FFlag API** is a Python-based automation framework designed to manage and automate the lifecycle of feature flags in software development. Specifically, it focuses on the **cleanup phase**, identifying deprecated feature flags and automatically removing them from the codebase (specifically Java applications) using a combination of static code analysis (AST parsing) and Generative AI (LLM integration).
+
+### 2. System Architecture
+
+The system follows a **Microservices-style Architecture** (interacting via REST APIs) where the core logic resides in a Flask-based controller that orchestrates Git operations, code analysis, and AI service invocation.
+
+#### 2.1 High-Level Architecture
+```mermaid
+graph TD
+    User[User / dashboard] -->|REST API| Controller[FFlag Controller (Flask)]
+    Controller -->|Read| Config[Configuration & Data (JSON/INI)]
+    Controller -->|Clone| Git[CloneRepo Module]
+    Controller -->|Analyze & Patch| Cleanup[ProcessCleanup Module]
+    
+    Cleanup -->|Parse| AST[MethodParser (javalang)]
+    Cleanup -->|Invoke| AI[AI Service (Vegas/Jarvis)]
+    
+    Git -->|Pull| Repo[Target Git Repository]
+    Cleanup -->|Modify| Source[Source Code Files (Java)]
+```
+
+### 3. Key Components
+
+#### 3.1 Controller ([fflag_controller.py](file:///c:/development/fflag_api/fflag_controller.py))
+The entry point of the application, implemented using **Flask**. It exposes several REST endpoints to control the workflow:
+- `POST /fflag/searchallflags`: Retrieves a list of all feature flags managed by the system.
+- `POST /fflag/repoforflag`: Identifies which repository contains a specific flag.
+- `POST /fflag/downloadrepo`: Initiates the cloning of the target repository.
+- `POST /fflag/identifyflag`: Returns details about a specific flag to be removed.
+- `POST /fflag/processcleanup`: **Main Trigger**. Orchestrates the cleanup process for a given repository and flag.
+
+#### 3.2 Cleanup Logic ([process_cleanup.py](file:///c:/development/fflag_api/process_cleanup.py))
+This module contains the core business logic ([ProcessCleanup](file:///c:/development/fflag_api/process_cleanup.py#25-280) class):
+- **Directory Traversal**: Recursively scans the target repository for [constants](file:///c:/development/fflag_api/process_cleanup.py#53-60) folders to identify where flags are defined.
+- **Constant Mapping**: Parses Java files to map feature flag values (strings) to their constant variable names.
+- **Usage Identification**: Uses [MethodParser](file:///c:/development/fflag_api/methodparser.py#5-95) to find all methods where the identifying constant variable is used.
+- **AI-Based Refactoring**:
+    1. Extracts the code of the method containing the flag.
+    2. Constructs a prompt using [config/prompt.txt](file:///c:/development/fflag_api/config/prompt.txt).
+    3. Calls the external **Vegas/Jarvis AI Service** (`jarvisuat.ebiz.verizon.com`) to request a refactored version of the code without the flag.
+    4. Applies the returned code changes to the file.
+
+#### 3.3 AST Parser ([methodparser.py](file:///c:/development/fflag_api/methodparser.py))
+A utility module leveraging the `javalang` library to perform Abstract Syntax Tree (AST) analysis on Java code.
+- **Functions**:
+    - [extract_methods](file:///c:/development/fflag_api/methodparser.py#7-19): Parses a Java file and returns a list of methods with their start/end lines.
+    - [extract_methods_with_constant](file:///c:/development/fflag_api/methodparser.py#38-52): Filters methods that contain a specific constant.
+- **Significance**: Allows for precise code extraction (method-level) rather than error-prone regex matching for code block identification.
+
+#### 3.4 Configuration
+The system relies on file-based configuration:
+- [config/flag.config](file:///c:/development/fflag_api/config/flag.config): Main configuration file (defines debug mode and repo paths).
+- `config/fflag_data.json`: Database of feature flags.
+- [config/deprecated_flag_response.json](file:///c:/development/fflag_api/config/deprecated_flag_response.json): details for the current flag being processed.
+- [config/prompt.txt](file:///c:/development/fflag_api/config/prompt.txt): Template prompt for the AI service.
+
+### 4. Data Flow
+
+1. **Trigger**: User calls `/fflag/processcleanup`.
+2. **Setup**: System reads target repo and flag name from JSON config.
+3. **Discovery**:
+    - Scans [constants](file:///c:/development/fflag_api/process_cleanup.py#53-60) folder to find the Java variable name for the flag string.
+    - Scans codebase to find methods using that variable.
+4. **Refactoring Loop** (for each identified method):
+    - **Extract**: Get source code of the method.
+    - **Prompt**: Inject code and flag info into [prompt.txt](file:///c:/development/fflag_api/config/prompt.txt).
+    - **Request**: Send to AI Service (`/vegas/api/invoke`).
+    - **Receive**: Get 'cleaned' code prediction.
+    - **Apply**: Replace the original method in the source file with the AI-generated code.
+
+### 5. Technology Stack
+- **Language**: Python 3.x
+- **Web Framework**: Flask (with `flask_cors`)
+- **Code Analysis**: `javalang` (Java AST parser)
+- **HTTP Client**: `http.client`, `requests` (implicit)
+- **AI Service**: Custom internal endpoint (Jarvis/Vegas)
+
+### 6. Deployment & Environment
+- **OS**: Windows (implied by file paths in codebase).
+- **Setup**:
+    - Virtual Environment (`venv_fflag`) recommended.
+    - Dependencies: `flask`, `flask_cors`, `javalang`.
+    - Connectivity: Access to Verizon internal network for AI service.
